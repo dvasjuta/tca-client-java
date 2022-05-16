@@ -56,7 +56,7 @@ import org.openapitools.client.JSON;
 public class WebhookWithSecret {
   public static final String SERIALIZED_NAME_SIGNING_SECRET = "signing_secret";
   @SerializedName(SERIALIZED_NAME_SIGNING_SECRET)
-  private File signingSecret;
+  private String signingSecret;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -130,7 +130,7 @@ public class WebhookWithSecret {
   public WebhookWithSecret() { 
   }
 
-  public WebhookWithSecret signingSecret(File signingSecret) {
+  public WebhookWithSecret signingSecret(String signingSecret) {
     
     this.signingSecret = signingSecret;
     return this;
@@ -143,12 +143,12 @@ public class WebhookWithSecret {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "a sercret used to sign all callbacks for this webhook")
 
-  public File getSigningSecret() {
+  public String getSigningSecret() {
     return signingSecret;
   }
 
 
-  public void setSigningSecret(File signingSecret) {
+  public void setSigningSecret(String signingSecret) {
     this.signingSecret = signingSecret;
   }
 

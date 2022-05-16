@@ -9,6 +9,7 @@ version = '1.0.246'
 buildscript {
     repositories {
         mavenCentral()
+        mavenLocal()       // Needed if the 'openapi-java-client' jar has been published to the local maven repo.
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.+'
@@ -19,6 +20,7 @@ buildscript {
 
 repositories {
     mavenCentral()
+    mavenLocal()       // Needed if the 'openapi-java-client' jar has been published to the local maven repo.
 }
 sourceSets {
     main.java.srcDirs = ['src/main/java']
@@ -37,8 +39,8 @@ if(hasProperty('target') && target == 'android') {
             targetSdkVersion 25
         }
         compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
+            sourceCompatibility JavaVersion.VERSION_11
+            targetCompatibility JavaVersion.VERSION_11
         }
 
         // Rename the aar correctly
@@ -83,8 +85,8 @@ if(hasProperty('target') && target == 'android') {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     publishing {
         publications {
